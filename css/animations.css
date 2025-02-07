@@ -1,0 +1,212 @@
+.grid-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(var(--accent-1) 1px, transparent 1px), linear-gradient(90deg, var(--accent-1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.1;
+    z-index: -1;
+    animation: gridPulse 8s ease-in-out infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(var(--grid-size));
+    }
+}
+
+@keyframes gridPulse {
+    0%, 100% { opacity: .08; }
+    50% { opacity: 0.15; }
+}
+
+@keyframes backgroundFloat {
+    0%, 100% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+    opacity: 0.3;
+    z-index: -1;
+    animation: backgroundFloat 20s ease infinite;
+    mix-blend-mode: overlay;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* @keyframes titleFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+/* @keyframes gradientSlide {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+} */
+
+/* Fixed typewriter animation */
+.typewriter {
+    display: inline-block;
+    position: relative;
+    color: var(--text-light);
+    width: fit-content; /* Make container fit the text */
+}
+
+.typewriter::after {
+    content: '|';
+    position: absolute;
+    right: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    animation: blink 0.8s infinite;
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 0.8s steps(30) forwards; /* Reduced from 1.2s to 0.8s */
+    border-right: transparent; /* Remove default border */
+    --text-width: fit-content;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: var(--text-width, 100%); }
+}
+
+@keyframes blink {
+    from, to { opacity: 0 }
+    50% { opacity: 1 }
+}
+
+.hover-effect {
+    transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+    transform: translateY(-5px);
+    filter: brightness(1.2);
+}
+
+
+.logo-banner {
+    opacity: 0;
+    transform: translate(0, -50px);
+    animation: slideInLogo 0.8s ease forwards;
+}
+
+@keyframes slideInLogo {
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+@media (min-width: 768px) {
+    .logo-banner {
+        transform: translate(-50px, 0);
+        animation: slideInLogo 0.8s ease forwards;
+    }
+}
+
+.hero-title {
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: titleFadeIn 0.8s ease forwards;
+}
+
+@keyframes titleFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Remove old glitch styles */
+/* Replace with new title animation */
+.hero-title {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: titleFadeIn 0.8s ease forwards 0.5s;
+}
+
+
+@keyframes titleFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-title {
+    position: relative;
+    opacity: 0;
+    transform: scale(0.95);
+    background: var(--text-light);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: titleReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-title::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--accent-1);
+    transform-origin: left;
+    animation: titleMask 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes titleReveal {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes titleMask {
+    from {
+        transform: scaleX(1);
+    }
+    to {
+        transform: scaleX(0);
+    }
+}

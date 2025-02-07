@@ -1,0 +1,149 @@
+.about-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 2rem 2rem;
+}
+
+.about-content {
+    max-width: 1200px;
+    width: 100%;
+}
+
+.about-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.skills h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+}
+
+.skill {
+    margin-bottom: 1.5rem;
+}
+
+.skill-name {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.skill-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--gradient);
+    width: 0;
+    transition: width 1.5s ease;
+}
+
+/* Animation for skill bars */
+.fade-in-section.is-visible .skill-progress {
+    width: attr(data-progress);
+}
+
+.experience-timeline {
+    margin: 3rem 0;
+}
+
+.experience-timeline h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.timeline-item {
+    margin-bottom: 2rem;
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--accent-2);
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -6px;
+    top: 0;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent-2);
+}
+
+.year {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.timeline-item h4 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.tools-section {
+    margin-top: 3rem;
+}
+
+.tools-section h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+}
+
+.tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.tool {
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--circle-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.tool:hover {
+    background: var(--accent-1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .skills h2 {
+        font-size: 1.75rem;
+    }
+}
