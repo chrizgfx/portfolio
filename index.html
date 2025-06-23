@@ -7,7 +7,7 @@
     <title>Chris Hode</title>
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/animations.css">
-    <script src="./js/main.js"></script>
+    <link rel="stylesheet" href="./css/drawing.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/all.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-solid.css">
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.5.1/css/sharp-regular.css">
@@ -25,7 +25,6 @@
                 <span></span>
             </button>
             <ul class="nav-links">
-                <!-- <li><a href="./" class="active">Home</a></li> -->
                 <li><a href="./about">about</a></li>
                 <li><a href="./projects">projects</a></li>
                 <li><a href="./contact">contact</a></li>
@@ -37,7 +36,7 @@
     </header>
 
     <main>
-        <section class="hero parallax-container">
+        <section id="home" class="hero parallax-container">
             <div class="parallax-layer background" data-speed="0.5">
                 <div class="ambient-light"></div>
                 <div class="ambient-light"></div>
@@ -53,7 +52,6 @@
                     <div class="hero-content">
                         <h1 class="hero-title">hey, i'm chris hode,</h1>
                         <p class="typewriter">a developer & designer.</p> 
-                        <!--Crafting digital experiences through code and design-->
                         <div class="cta-buttons">
                             <a href="/projects" class="btn primary">View Projects</a>
                             <a href="/contact" class="btn secondary">Get in Touch</a>
@@ -63,7 +61,7 @@
             </div>
         </section>
 
-        <section class="featured-skills">
+        <section id="skills" class="featured-skills">
             <div class="container">
                 <h2>what i do.</h2>
                 <div class="skills-grid">
@@ -86,7 +84,7 @@
             </div>
         </section>
 
-        <section class="quick-stats">
+        <section id="stats" class="quick-stats">
             <div class="container">
                 <div class="stats-grid">
                     <div class="stat-item">
@@ -105,7 +103,7 @@
             </div>
         </section>
 
-        <section class="explore-section">
+        <section id="explore" class="explore-section">
             <div class="container">
                 <h2>explore more.</h2>
                 <div class="explore-grid">
@@ -151,6 +149,14 @@
             </div>
         </section>
 
+        <section id="draw">
+            <div id="drawing-container">
+                <h2>scribble something fun <i class="fa-duotone fa-solid fa-pen-swirl"></i></h2>
+                <canvas id="drawing-canvas"></canvas>
+                <button id="clear-canvas">clear</button>
+            </div>
+        </section>
+            
     </main>
 
     <footer>
@@ -161,5 +167,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="./js/main.js"></script>
+    <script src="./js/drawing.js"></script>
 </body>
 </html>
