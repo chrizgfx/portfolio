@@ -40,6 +40,7 @@
     background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.05));
     opacity: 0;
     transition: opacity 0.3s ease;
+    z-index: -1;
 }
 
 .project-card:hover {
